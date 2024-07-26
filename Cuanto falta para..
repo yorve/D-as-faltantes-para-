@@ -1,0 +1,27 @@
+from datetime import datetime
+
+fiestas_patrias = datetime(datetime.now().year,9,18)
+navidad = datetime(datetime.now().year, 12,25)
+año_nuevo = datetime(datetime.now().year, 12,31)
+
+hoy = datetime.now()   #obtener fecha de hoy 
+
+def dias_restantes(fecha):
+    return (fecha - hoy).days
+
+pregunta = input(
+    '¿Cuanto falta para: \n'
+      '1:Fiestas patrias \n'
+      '2:Navidad \n'
+      '3:Año nuevo \n'
+'Eliga una opción:'
+      )  
+
+if pregunta == '1':
+    print (f'Faltan {dias_restantes(fiestas_patrias)} días para fiestas patrias')
+elif pregunta  == '2':
+    print (f'Faltan {dias_restantes(navidad)} días para navidad')
+elif pregunta == '3':
+     print (f'Faltan {dias_restantes(año_nuevo)} días para año nuevo')
+else:
+    print ('Opción invalida')
